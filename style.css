@@ -31,7 +31,7 @@ body
 	justify-content: center;
 	align-items: center;
 	height: 100%;
-	/* border: 1px dashed red; */
+	border: 1px dashed red;
 }
 
 .container .col img
@@ -69,7 +69,7 @@ body
 .container .col .led
 {
 	width: 30%;
-	/* border: 1px solid yellow; */
+	border: 1px solid yellow;
 	justify-content: center;
 }
 
