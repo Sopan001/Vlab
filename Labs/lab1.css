@@ -1,0 +1,380 @@
+body
+{
+	margin:0;
+	padding:0;
+}
+
+
+/************************ START NAV *****************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero
+{
+
+	height: 100%;
+    width: 100%;
+    /* background-image: url('images/banner.png'); */
+    /* display: flex; */
+    background-color: #fff;
+    /* background-image: cover;
+    background-size: 100% 100%; */
+     border: 3px solid yellow;
+}
+
+.hero .header {
+    color: #fff;
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid red; */
+    align-items: center;
+    padding: 10px 64px;
+    position: relative;
+}
+
+.hero .header .menu {
+    /* border: 3px solid yellow; */
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img
+{
+    width: 180px;
+}
+
+.hero .header .menu button {
+    display: none;
+}
+
+.hero .header .menu-list {
+    list-style: none;
+    display: flex;
+}
+
+.hero .header .menu-list li {
+    display: inline-block;
+    margin-left: 32px;
+    font-size: 1.2em;
+    cursor: pointer;
+    /* transition: color 0.3s; */
+}
+
+.hero .header .menu-list li a{
+    /* border: 2px solid black; */
+    color: #111;
+    text-decoration: none
+}
+
+.hero .header .menu-list li a:hover{
+
+        color: #5838fc;
+
+    }
+
+
+.hero .lab_list
+{
+    display: flex;
+    width: 100%;
+    min-height: 640px;
+    /* border: 3px solid red; */
+}
+
+
+.hero .lab_list .title
+{
+    padding: 60px 120px;
+}
+
+
+.hero .lab_list .title h3
+{
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 410px) {
+    .hero .header {
+        padding-left: 10px;
+    }
+    .logo img
+    {
+        width: 160px;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+
+    .hero .header .menu button {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        color: #111;
+        outline: none;
+        font-size: 1.7em;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .hero .header .menu i.fa-times,
+    .hero .header .menu.opened i.fa-bars {
+        display: none;
+    }
+
+    .hero .header .menu.opened a {
+    color:#fff;
+    }
+
+    .hero .header .menu.opened i.fa-times,
+    .hero .header .menu i.fa-bars {
+        display: block;
+        animation: enter 0.8s;
+    }
+
+    @keyframes enter {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .menu-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background-color: #711def;
+        color: #fff;
+        padding: 46px;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+        z-index: 2;
+    }
+
+    .menu-list li {
+        font-size: 1.7em;
+        margin: 32px 0px;
+    }
+
+    .menu.opened .menu-list {
+        transform: translateX(0);
+    }
+
+    .menu.opened button {
+        color: #fff;
+    }
+}
+
+
+/*****************  END NAV ************************/
+
+.main
+{
+	display: flex;	
+	height: 100%;
+	/* overflow: hidden; */
+	border: 3px solid red;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 50px;
+	position: relative; 
+}
+.container
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 480px;
+	width: 55%;
+
+	border: 1px solid;
+	margin-bottom: 50px;
+}
+
+.container .col
+{
+	display: flex;
+	position:relative;
+	flex-basis: 40%;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	/* border: 1px dashed red; */
+}
+
+.container .col img
+{
+	/* position:relative; */
+	/* top:10%; */
+	width: 100%;
+	height: 70%;
+}
+
+.container .col .ardBtn
+{
+	/* border: 1px solid black; */
+	padding: 3px 3px;
+}
+
+.container .col .Num13
+{
+	/* border: 1px solid yellow; */
+	position:absolute;
+	display:fixed;
+	right:10px;
+	top:47%;
+	background-color:wheat; 
+}
+
+.container .col .Ground
+{
+	position:absolute;
+	display:fixed;
+	right:10px;
+	top:45%;
+}
+
+.container .col .led
+{
+	width: 30%;
+	/* border: 1px solid yellow; */
+	justify-content: center;
+}
+
+
+.container .col .Negative
+{
+	/* border: 1px solid yellow; */
+	padding: 3px 1px;
+	position:absolute;
+	display:fixed;
+	right:55%;
+	top:78%;
+	/* background-color:transparent; */
+}
+
+.container .col .Positive
+{
+	/* border: 1px solid yellow; */
+	padding: 3px 1px;
+	position:absolute;
+	display:fixed;
+	right:41%;
+	top:82%;
+	/* background-color:transparent; */
+}
+
+.container .col .canvas
+{
+	position:absolute;
+	width:168%;
+	height:100%;
+	margin-left: 51%;
+	/* border: 1px solid blue; */
+}
+
+
+.paddind_left
+{
+	padding-left: 40px;
+}
+
+.dragContainer
+{
+	border: 1px solid red;
+	display: flex;
+	height: 250px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.dragContainer .dragcol{
+   height: 210px;
+   width: 300px;
+   float: left;
+   border: 2px solid black;
+   margin-left: 3%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.dragContainer .dragcol img
+{
+	   height: 210px;
+}
+
+.dragContainer .dragcol .wire
+	{
+		width: 200px;
+		border: 1px solid blue;
+	}
+
+
+@media screen and (max-width: 800px) {
+
+	.container
+	{
+		height: 280px;
+		width: 90%;
+	}
+}
+
+
+@media screen and (max-width: 750px) {
+
+	.dragContainer
+	{
+		flex-direction: column;
+		height: 100%;
+	}
+	.dragContainer .dragcol{
+		margin-bottom: 3%;
+		height: 200px;
+	}
+	.dragContainer .dragcol img
+	{
+		height: 190px;
+	}
+}
