@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="lab1.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>V-lab</title>
 </head>
 
 <body>
@@ -32,45 +33,75 @@
 		</header>
 	</div>
 
-	<div class="main">
-		<div class="container" id="con">
-			<div class = "col paddind_left">
-				<img src="img/arduino2.png"> 
-			</div>
-			<div class = "col" id="line_col">
-				 <canvas id="black" class="canvas"></canvas>
-				 <canvas id="red" class="canvas"></canvas>
-			</div>
-				
-			<div class = "col">
-				<img src="img/demo3.png" class="led">
-			</div>
 
+	<div class="tabs">
+		<div class="btn-box">
+			<button id="theory_btn" onClick="onClickTheory()"><i class="fa fa-book-open"></i>Theory</button>
+			<button id="procedure_btn" onClick="onClickProcedure()"><i class="fa fa-project-diagram"></i>Procedure</button>
+			<button id="simulation_btn" onClick="onClickSimulation()"><i class="fa fa-flask"></i>Simulation</button>
+			<button id="faq_btn" onClick="onClickFAQ()"><i class="fa fa-question-circle"></i>FAQ's</button>
 		</div>
-	</div>
+
+
+		<div id="theory" class="content">
+			<h1>Theory</h1>
+		</div>
+
+		<div id="procedure" class="content">
+			<h1>Procedure</h1>
+		</div>
+
+		<div id="simulation" class="content">
+
+			<!-- Simulation -->
+			<div class="main">
+				<div class="container" id="con">
+					<div class = "col paddind_left" ondragover="allowDrop(event)" ondrop="drop(event,'arduino')">
+						<!-- <img src="img/arduino2.png">  -->
+					</div>
+					<div class = "col" id="line_col" ondragover="allowDrop(event)" ondrop="lineDrop(event,'wire')">
+						 <canvas id="black" class="canvas"></canvas>
+						 <canvas id="red" class="canvas"></canvas>
+					</div>
+						
+					<div class = "col" ondragover="allowDrop(event)" ondrop="drop(event,'led')">
+						<!-- <img src="img/demo3.png" class="led"> -->
+					</div>
+
+				</div>
+			</div>
 
 	
-	<div class="dragContainer">
-			<div class="dragcol">
-				<img src="img/arduino2.png"> 
-			</div>
+			<div class="dragContainer">
+					<div class="dragcol">
+						<img src="img/arduino2.png" id="arduino" ondragstart="drag(event)"> 
+					</div>
 
-			<div class="dragcol">
-				<img src="img/black-wire.png" class="wire">
-			</div>
+					<div class="dragcol">
+						<img src="img/black-wire.png" id="blackwire" class="wire" ondragstart="drag(event)">
+					</div>
 
-			<div class="dragcol">
-				<img src="img/red-wire.png" class="wire">
-			</div>
+					<div class="dragcol">
+						<img src="img/red-wire.png" id="redwire" class="wire" ondragstart="drag(event)">
+					</div>
 
-			<div class="dragcol">
-				<img src="img/demo3.png" class="led">
+					<div class="dragcol">
+						<img src="img/demo3.png" id="led" class="led" ondragstart="drag(event)">
+					</div>
 			</div>
+	
+			<!------------ END Simulation --------------->
+		</div>
+
+		<div id="faq" class="content">
+			<h1>FAQ's</h1>
+		</div>
+
 	</div>
 
 
 
-	<script src="lab1.js"></script>
 	<script src="index.js"></script>
+	<script src="drag.js"></script>
 </body>
 </html>
