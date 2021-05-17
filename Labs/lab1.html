@@ -3,105 +3,418 @@
 <html>
 <head>
 	<link rel="stylesheet" href="lab1.css">
+	<link rel = "stylesheet" href="faq.css">
+    <link rel = "stylesheet" href="newTheory.css">
+    <link rel="stylesheet" href="codeBtn.css">
+	<link rel = "stylesheet" href="..\utility.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>V-lab</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
 
+    	<div class="hero">
+    		<header class="header">
+    			<section class="menu">
+    			        <div class="logo">
+    			        	<a><img src="../images/logo.png"></a>
+    			        </div>
 
-	<div class="hero">
-		<header class="header">
-			<section class="menu">
-			        <div class="logo">
-			        	<a><img src="img/logo.png"></a>
-			        </div>
+    		           <ul class="menu-list">
+    		                <li><a href="../index.html">Home</a></li>
+    		                <li><a href="#">About Us</a></li>
+    		                <li><a href="../lab.html">Explore Lab</a></li>
+    		                <li><a href="#">Contact Us</a></li>
+    		            </ul>
 
-		           <ul class="menu-list">
-		                <li><a href="#">Home</a></li>
-		                <li><a href="#">About Us</a></li>
-		                <li><a href="#">Explore Lab</a></li>
-		                <li><a href="#">Contact Us</a></li>
-		            </ul>
-
-		    		<button>
-		                <i class="fas fa-times" style="color: #fff"></i>
-		                <i class="fas fa-bars"></i>
-		            </button>
-	        </section>
-		</header>
-	</div>
-
-
-	<div class="tabs">
-		<div class="btn-box">
-			<button id="theory_btn" onClick="onClickTheory()"><i class="fa fa-book-open"></i>Theory</button>
-			<button id="procedure_btn" onClick="onClickProcedure()"><i class="fa fa-project-diagram"></i>Procedure</button>
-			<button id="simulation_btn" onClick="onClickSimulation()"><i class="fa fa-flask"></i>Simulation</button>
-			<button id="faq_btn" onClick="onClickFAQ()"><i class="fa fa-question-circle"></i>FAQ's</button>
-		</div>
+    		    		<button>
+    		                <i class="fas fa-times" style="color: #fff"></i>
+    		                <i class="fas fa-bars"></i>
+    		            </button>
+    	        </section>
+    		</header>
+    	</div>
 
 
-		<div id="theory" class="content">
-			<h1>Theory</h1>
-		</div>
+    	<div class="tabs">
+    		<div class="btn-box">
+    			<button id="theory_btn" onClick="onClickTheory()"><i class="fa fa-book-open"></i>Theory</button>
+    			<button id="procedure_btn" onClick="onClickProcedure()"><i class="fa fa-project-diagram"></i>Procedure</button>
+    			<button id="simulation_btn" onClick="onClickSimulation()"><i class="fa fa-flask"></i>Simulation</button>
+    			<button id="faq_btn" onClick="onClickFAQ()"><i class="fa fa-question-circle"></i>FAQ's</button>
+    		</div>
 
-		<div id="procedure" class="content">
-			<h1>Procedure</h1>
-		</div>
 
-		<div id="simulation" class="content">
+    		<div id="theory" class="content theory-Container">
+    			<h1> Study of connectivity with Arduino and LED's </h1>
 
-			<!-- Simulation -->
-			<div class="main">
-				<div class="container" id="con">
-					<div class = "col paddind_left" ondragover="allowDrop(event)" ondrop="drop(event,'arduino')">
-						<!-- <img src="img/arduino2.png">  -->
-					</div>
-					<div class = "col" id="line_col" ondragover="allowDrop(event)" ondrop="lineDrop(event,'wire')">
-						 <canvas id="black" class="canvas"></canvas>
-						 <canvas id="red" class="canvas"></canvas>
-					</div>
-						
-					<div class = "col" ondragover="allowDrop(event)" ondrop="drop(event,'led')">
-						<!-- <img src="img/demo3.png" class="led"> -->
-					</div>
+                <div class="sec1">
+                    <p>RASPBERRY PI : The Raspberry Pi was created in February 2012 by the Raspberry Pi Foundation, Originally setup to promote and teach basic computer science in schools and colleges around the UK. They
+                        initially released 2 Devices, the Model A and the Model B, these computers ranged in spec and
+                        capabilities. Soon after the release of these products a community was formed and thousands of
+                        “Tech-Heads” bought one and started to create new projects with it, for instance setup a Home
+                        Media Centre and played the popular game Mine craft etc. The products were so popular due to their
+                        lower cost. 
+                    </p>
+                    <figure>
+                        <img src="img/arduino2.png" alt="figure here">
+                        <figcaption>Fig 1. Arduino </figcaption>
+                    </figure>
+                </div>
 
-				</div>
-			</div>
 
-	
-			<div class="dragContainer">
-					<div class="dragcol">
-						<img src="img/arduino2.png" id="arduino" ondragstart="drag(event)"> 
-					</div>
+                <div class="sec2">
+                    <p> LED's : LED stands for Light Emitting Diode, and glows when electricity is passed through it.
+                        When you pick up the LED, you will notice that one leg is longer than the other. The longer leg
+                        (known as the ‘anode’), is always connected to the positive supply of the circuit. The shorter leg
+                        (known as the ‘cathode’) is connected to the negative side of the power supply, known as
+                        ‘ground’.Following figure shows LED structure.</p>
+                    <figure>
+                        <img src="img/RED_LED.png" alt="figure here">
+                        <figcaption>Fig 2. LED</figcaption>
+                    </figure>
+                </div>
 
-					<div class="dragcol">
-						<img src="img/black-wire.png" id="blackwire" class="wire" ondragstart="drag(event)">
-					</div>
+                <div class="sec3">
+                        <p>RESISTOR : We must ALWAYS use resistors to connect LEDs up to the GPIO pins of the Raspberry Pi. The
+                        Raspberry Pi can only supply a small current (about 60mA). The LEDs will want to draw more,
+                        and if allowed to they will burn out the Raspberry Pi. Therefore putting the resistors in the circuit
+                        will ensure that only this small current will flow and the Pi will not be damaged.</p>
+                        <figure>
+                            <img src="img/RESISTOR.png" alt="figure here">
+                            <figcaption>Fig 3. Resistor</figcaption>
+                        </figure>
 
-					<div class="dragcol">
-						<img src="img/red-wire.png" id="redwire" class="wire" ondragstart="drag(event)">
-					</div>
+                </div>
 
-					<div class="dragcol">
-						<img src="img/demo3.png" id="led" class="led" ondragstart="drag(event)">
-					</div>
-			</div>
-	
-			<!------------ END Simulation --------------->
-		</div>
+                <div class="sec4">
+                    <a class="btn" onClick="onClickProcedure()">Next</a>
+                </div>
 
-		<div id="faq" class="content">
-			<h1>FAQ's</h1>
-		</div>
+    		</div>
 
-	</div>
+
+            <!-- ------ Start Procedure ------------------- -->
+    		<div id="procedure" class="content procedure-container">
+    			<h1>STEPS TO PERFORM SIMULATION</h1>
+
+                    <div class="theory-Container">
+                        <p>1.&nbsp; CLICK ON THE EXPLORE LAB BUTTON FROM HOMEPAGE</p>
+                        <p>2.&nbsp; SELECT THE SIMULATION TAB</p>
+                        <p>3.&nbsp; DRAG THE ARDUINO AND DROP IT ON ARDUINO PLACE </p>
+                        <p>4.&nbsp; DRAG THE LED AND DROP IT ON LED PLACE</p>
+                        <p>5.&nbsp; DRAG THE RED WIRE AND DROP IT ON IT'S PLACE</p>
+                        <p>6.&nbsp; FINALLY DRAG THE BLACK WIRE AND DROP IT ON IT'S PLACE</p>
+                        <p>7.&nbsp; CLICK ON THE SUBMIT BUTTON TO START THE SIMULATION</p>
+
+                        <div class="sec4">
+                            <a class="btn procedure_btn" onClick="onClickSimulation()">Next</a>
+                        </div>
+                    </div>
+
+    		</div>
+
+    		<div id="simulation" class="content">
+
+    			<!-- Simulation -->
+    			<div class="main">
+    				<div class="container">
+    					<div class = "col paddind_left" ondragover="allowDrop(event)" 
+                                                ondrop="drop(event,'arduino')" id="col1">
+
+                            <div class="label"><h2 id="arduino_label">Arduino</h2></div>
+
+
+    					</div>
+    					<div class = "col" ondragover="allowDrop(event)" ondrop="lineDrop(event,'wire')" id="col2">
+    						 <canvas id="black" class="canvas"></canvas>
+    						 <canvas id="red" class="canvas"></canvas>
+
+                             <div class="label"><h2 id="wire_label">Wire</h2></div>
+    					</div>
+    						
+    					<div class = "col" ondragover="allowDrop(event)" ondrop="drop(event,'led')" id="col3">
+
+                            <div class="label"><h2 id="led_label">LED</h2></div>
+
+
+    					</div>
+
+    				</div>
+
+    				<div class="simulation_btn_box">
+    					<button class="btn" id="arduinoCode">Code</button>
+    					<button class="btn" onClick="onSubmit()">Submit</button>
+    				</div>
+    			</div>
+                
+
+
+
+                <!--------   Arduino Code ------------->
+
+                    <div id="myModal" class="modal">
+    
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1>PROGRAM</h1>
+                            <br>
+                            <p> 
+
+
+                            int led = 7;<br>
+
+                            void setup() {<br>
+
+                            pinMode(led, OUTPUT);<br>
+
+                            }<br>
+
+                            void loop() {<br>
+
+                            digitalWrite(led, HIGH);<br>
+
+                            delay(1000);<br>
+
+                            digitalWrite(led, LOW);<br>
+
+                            delay(1000);<br>
+
+                            }<br>
+
+                            <p>
+                        </div>
+                    
+                    </div>
+
+    	        <!--------  End  Arduino Code ------------->
+
+
+    			<div class="dragContainer">
+    					<div class="dragcol">
+    						<img src="img/arduino2.png" id="arduino" ondragstart="drag(event)"> 
+    					</div>
+
+    					<div class="dragcol">
+    						<img src="img/black-wire.png" id="blackwire" class="wire" ondragstart="drag(event)">
+    					</div>
+
+    					<div class="dragcol">
+    						<img src="img/red-wire.png" id="redwire" class="wire" ondragstart="drag(event)">
+    					</div>
+
+    					<div class="dragcol">
+    						<img src="img/led.png" id="led" class="led" ondragstart="drag(event)">
+    					</div>
+    			</div>
+    	
+    		</div>
+
+            <!------------ END Simulation --------------->
+
+
+
+            <!-- ---------  FAQ   ----------------------- -->
+
+    		<div id="faq" class="content">
+    			
+
+
+
+    			<div class="faq_container mt-sm-5 my-1">
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+            <div class="py-2 h5"><b>1. Raspberry Pi is a<br><br></b></div>
+                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                        <label class="options">Microcontroller
+                            <input type="radio" name="faq1" value="Microcontroller"> 
+                            <span class="checkmark"></span> 
+                        </label> 
+                        
+                        <label class="options">Microprocessor
+                            <input type="radio" name="faq1" value="Microprocessor"> 
+                            <span class="checkmark"> </span> 
+                        </label> 
+                    
+                        <label class="options" id="ans1">both a & b
+                            <input type="radio" name="faq1" value="Microprocessor"> 
+                            <span class="checkmark"></span> 
+                        </label>
+                    
+                    <label class="options">none of the above
+                        <input type="radio" name="faq1" value="none of the above"> 
+                        <span class="checkmark"></span> 
+                    </label>
+                </div>
+            </div>    
+
+
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+                <div class="py-2 h5"><b>2. Which instruction set architecture is used in Raspberry Pi<br><br></b></div>
+                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                            <label class="options">X86
+                                <input type="radio" name="faq2" value="X86"> 
+                                <span class="checkmark"></span> 
+                            </label> 
+                            
+                            <label class="options">MSP
+                                <input type="radio" name="faq2" value="MSP"> 
+                                <span class="checkmark"> </span> 
+                            </label> 
+                        
+                            <label class="options">AVR
+                                <input type="radio" name="faq2" value="AVR"> 
+                                <span class="checkmark"></span> 
+                            </label>
+                        
+                        <label class="options">ARM
+                            <input type="radio" name="faq2" value="ARM"> 
+                            <span class="checkmark"></span> 
+                        </label>
+                    </div>
+                </div>   
+                <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+                    <div class="py-2 h5"><b>3. What is the default user in Debain on Raspberry Pi?<br><br></b></div>
+                        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                                <label class="options">Default
+                                    <input type="radio" name="faq3" value="Default"> 
+                                    <span class="checkmark"></span> 
+                                </label> 
+                                
+                                <label class="options">User
+                                    <input type="radio" name="faq3" value="User"> 
+                                    <span class="checkmark"> </span> 
+                                </label> 
+                            
+                                <label class="options">Pi
+                                    <input type="radio" name="faq3" value="Pi"> 
+                                    <span class="checkmark"></span> 
+                                </label>
+                            
+                            <label class="options">Root
+                                <input type="radio" name="faq3" value="Root"> 
+                                <span class="checkmark"></span> 
+                            </label>
+                        </div>
+                    </div>   
+                    <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+                        <div class="py-2 h5"><b>4. What are the distributions are supported by raspberry Pi?<br><br></b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                                    <label class="options">Arch Linux
+                                        <input type="radio" name="faq4" value="Arch Linux"> 
+                                        <span class="checkmark"></span> 
+                                    </label> 
+                                    
+                                    <label class="options">Debian
+                                        <input type="radio" name="faq4" value="Debian"> 
+                                        <span class="checkmark"> </span> 
+                                    </label> 
+                                
+                                    <label class="options">Fedora Remix
+                                        <input type="radio" name="faq4" value="Fedora Remix"> 
+                                        <span class="checkmark"></span> 
+                                    </label>
+                                
+                                <label class="options">Arch Linux,Fedora Remix,Debian
+                                    <input type="radio" name="faq4" 
+                                    value="Arch Linux,Fedora Remix,Debian"> 
+                                    <span class="checkmark"></span> 
+                                </label>
+                            </div>
+                        </div>   
+                        <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+                            <div class="py-2 h5"><b>5. What bit processor is used in Pi 3?<br><br></b></div>
+                                <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                                        <label class="options">64 bit
+                                            <input type="radio" name="faq5" value="64 bit">
+                                            <span class="checkmark"></span> 
+                                        </label> 
+                                        
+                                        <label class="options">32 bit
+                                            <input type="radio" name="faq5" value="32 bit"> 
+                                            <span class="checkmark"> </span> 
+                                        </label> 
+                                    
+                                        <label class="options">128 bit
+                                            <input type="radio" name="faq5" value="128 bit"> 
+                                            <span class="checkmark"></span> 
+                                        </label>
+                                    
+                                    <label class="options">64 and 32 bit
+                                        <input type="radio" name="faq5" value="64 and 32 bit"> 
+                                        <span class="checkmark"></span> 
+                                    </label>
+                                </div>
+                            </div>   
+                            <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+
+
+                                <div class="py-2 h5"><b>6. What is the speed of operation in Pi 3?<br><br></b></div>
+                                    <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-5" id="options"> 
+                                            <label class="options">900MHz
+                                                <input type="radio" name="faq6" value="900MHz"> 
+                                                <span class="checkmark"></span> 
+                                            </label> 
+                                            
+                                            <label class="options">1.2GHz
+                                                <input type="radio" name="faq6" value="1.2GHz"> 
+                                                <span class="checkmark"> </span> 
+                                            </label> 
+                                        
+                                            <label class="options">1GHz
+                                                <input type="radio" name="faq6" value="1GHz"> 
+                                                <span class="checkmark"></span> 
+                                            </label>
+                                        
+                                        <label class="options">500MHz
+                                            <input type="radio" name="faq6" value="500MHz"> 
+                                            <span class="checkmark"></span> 
+                                        </label>
+                                    </div>
+                                </div>   
+                                <div class="question ml-sm-5 pl-sm-5 pt-2">
+    						</div>
+    						    
+
+    						<div class="faq_row">       
+    						    <button class="btn"  onClick = "verifyAnswer()">Submit</button>
+    						    </div>
+    						</div>
+
+
+    		</div>
+
+    	</div>
 
 
 
 	<script src="index.js"></script>
 	<script src="drag.js"></script>
+    <script src="arduinoCode.js"></script>
+    <script src="faqans.js"></script>
 </body>
 </html>

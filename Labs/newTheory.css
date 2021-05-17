@@ -1,0 +1,68 @@
+.theory-Container
+{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.theory-Container h1
+{
+	margin-bottom: 20px; 
+}
+
+.theory-Container .sec1 img{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.theory-Container .sec2 img{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height:250px;   
+    margin-top: 30px;
+}
+
+.theory-Container .sec3 img{
+ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height:250px;
+
+}
+
+.theory-Container figcaption{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.theory-Container p{
+    font-size: 20px;
+    line-height: 1.9;
+    color: #898989;
+}
+
+.theory-Container .sec4
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.procedure-container h1{
+	margin-bottom: 20px;
+}
+.procedure_btn
+{
+	margin-top: 50px;
+}

@@ -1,0 +1,20 @@
+.btn
+{
+	padding: 1.2rem 3.5rem;
+	color: #fff;
+	border: none;
+	font-size: 13px;
+    font-weight: 600;
+    background: #5838fc;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    line-height: .8;
+    letter-spacing: 0;
+    position: relative;
+    border-radius: 3px;
+    z-index: 1;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
